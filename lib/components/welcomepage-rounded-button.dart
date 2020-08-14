@@ -7,12 +7,14 @@ class WelcomePageButton extends StatelessWidget {
     @required this.height,
     this.title,
     this.color,
+    this.onPressed,
   }) : super(key: key);
 
   final double width;
   final double height;
   final String title;
   final Color color;
+  final Function onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class WelcomePageButton extends StatelessWidget {
       width: width * 0.6,
       height: height * 0.05,
       child: RaisedButton(
-        onPressed: () {},
+        onPressed: onPressed,
         color: color,
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0)),
