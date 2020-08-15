@@ -1,6 +1,8 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:student_assistant/components/custom-text-field.dart';
-import 'package:student_assistant/components/welcomepage-rounded-button.dart';
+import 'package:student_assistant/components/rounded-raised-button.dart';
 
 import '../constants.dart';
 
@@ -15,7 +17,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    //double width = MediaQuery.of(context).size.width;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Padding(
         padding:
@@ -27,7 +29,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 Hero(
                   tag: 'logo',
                   child: CircleAvatar(
-                    // radius: width * 0.1,
                     backgroundImage: AssetImage(kAppLogo),
                   ),
                 ),
@@ -49,44 +50,64 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   CustomTextField(
                     hintText: "Full Name",
                     inputType: TextInputType.name,
-                    color: Colors.blue,
                   ),
                   CustomTextField(
-                      hintText: "Email",
-                      inputType: TextInputType.emailAddress,
-                      color: Colors.blue),
+                    hintText: "Email",
+                    inputType: TextInputType.emailAddress,
+                  ),
                   CustomTextField(
-                      hintText: "Username",
-                      inputType: TextInputType.name,
-                      color: Colors.blue),
+                    hintText: "Username",
+                    inputType: TextInputType.name,
+                  ),
                   CustomTextField(
-                      hintText: "Profession",
-                      inputType: TextInputType.name,
-                      color: Colors.blue),
+                    hintText: "Profession",
+                    inputType: TextInputType.name,
+                  ),
                   CustomTextField(
-                      hintText: "Institute",
-                      inputType: TextInputType.name,
-                      color: Colors.blue),
+                    hintText: "Institute",
+                    inputType: TextInputType.name,
+                  ),
                   CustomTextField(
-                      hintText: "Mobile Number",
-                      inputType: TextInputType.number,
-                      color: Colors.blue),
-                  CustomTextFieldWithPassword(
+                    hintText: "Mobile Number",
+                    inputType: TextInputType.number,
+                  ),
+                  CustomTextField(
                     hintText: "Enter Password",
                     inputType: TextInputType.visiblePassword,
-                    color: Colors.blue,
+                    hasPassword: true,
                   ),
-                  CustomTextFieldWithPassword(
+                  CustomTextField(
                     hintText: "Confirm Password",
                     inputType: TextInputType.visiblePassword,
-                    color: Colors.blue,
+                    hasPassword: true,
+                  ),
+                  Text(
+                    "Link your social media (optional)",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontStyle: FontStyle.italic),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 12.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        InkWell(
+                          onTap: () {},
+                          child: Image.asset(kfbLogo, width: width * 0.2),
+                        ),
+                        InkWell(
+                          onTap: () {},
+                          child: Image.asset(kgoogleLogo, width: width * 0.2),
+                        ),
+                      ],
+                    ),
                   )
                 ],
               ),
             ),
             Hero(
               tag: 'join-us',
-              child: WelcomePageButton(
+              child: RoundedRaisedButton(
                 width: double.infinity,
                 height: height,
                 title: "Join Us",

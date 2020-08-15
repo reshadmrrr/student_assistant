@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class WelcomePageButton extends StatelessWidget {
-  const WelcomePageButton({
+class RoundedRaisedButton extends StatelessWidget {
+  const RoundedRaisedButton({
     Key key,
     @required this.width,
     @required this.height,
     this.title,
-    this.color,
+    this.color = Colors.lightBlueAccent,
     this.onPressed,
   }) : super(key: key);
 

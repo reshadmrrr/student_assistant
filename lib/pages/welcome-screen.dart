@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:student_assistant/constants.dart';
 import 'package:student_assistant/pages/login-page.dart';
+import 'package:student_assistant/pages/otp-page.dart';
 import 'package:student_assistant/pages/registration-page.dart';
 
-import '../components/welcomepage-rounded-button.dart';
+import '../components/rounded-raised-button.dart';
 
 class WelcomeScreen extends StatelessWidget {
   static String id = 'welcome-page';
@@ -19,9 +20,9 @@ class WelcomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Hero(
-              tag: 'logo',
-              child: Flexible(
+            Flexible(
+              child: Hero(
+                tag: 'logo',
                 child: CircleAvatar(
                   radius: width * 0.3,
                   backgroundImage: AssetImage(kAppLogo),
@@ -29,14 +30,17 @@ class WelcomeScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: height * 0.025),
-            Hero(
+            Flexible(
+              child: Hero(
                 tag: 'app-title',
-                child: Flexible(child: Image.asset(kAppTitle))),
+                child: Image.asset(kAppTitle),
+              ),
+            ),
             SizedBox(height: height * 0.1),
             Text("new?"),
             Hero(
               tag: 'join-us',
-              child: WelcomePageButton(
+              child: RoundedRaisedButton(
                 width: width,
                 height: height,
                 title: "Join Us",
@@ -49,14 +53,25 @@ class WelcomeScreen extends StatelessWidget {
             Text("already have an account?"),
             Hero(
               tag: 'login',
-              child: WelcomePageButton(
+              child: RoundedRaisedButton(
                 width: width,
                 height: height,
                 title: "Login",
                 color: klightred,
                 onPressed: () => Navigator.pushNamed(context, LoginScreen.id),
               ),
-            )
+            ),
+            SizedBox(height: height * 0.02),
+            Hero(
+              tag: 'yo',
+              child: RoundedRaisedButton(
+                width: width,
+                height: height,
+                title: "Temporary OTP",
+                color: Colors.deepPurple,
+                onPressed: () => Navigator.pushNamed(context, OTPScreen.id),
+              ),
+            ),
           ],
         ),
       ),
