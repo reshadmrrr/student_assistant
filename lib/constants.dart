@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 //ThemeData
 final ThemeData kdefaultTheme = ThemeData(
-  primaryColor: Colors.lightBlue,
-  primarySwatch: Colors.white,
+  primaryColor: Colors.lightBlue.shade500,
+  //primarySwatch: Colors.white,
   fontFamily: 'Catamaran Light',
 );
-
+const String urlPhoto =
+    'https://scontent.fdac18-1.fna.fbcdn.net/v/t1.0-9/s960x960/100087201_3004463702979539_7915647859221856256_o.jpg?_nc_cat=111&_nc_sid=85a577&_nc_ohc=ka1GXt3qsGgAX9x4kQ6&_nc_ht=scontent.fdac18-1.fna&_nc_tp=7&oh=33a05d6c3fb5f766dee6c2a41a817eec&oe=5F668048';
 ////All colors
 
 //const kPrimaryThemeColor = Color(0xffecf0f1);

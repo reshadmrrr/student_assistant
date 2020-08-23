@@ -18,35 +18,33 @@ class OTPScreen extends StatelessWidget {
           borderRadius: BorderRadius.circular(16.0),
           color: Colors.white,
         ),
-        child: Flexible(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text(
-                "Enter Your Attendance Code",
-                style: TextStyle(fontSize: 18.0),
-              ),
-              Padding(
-                padding: EdgeInsets.all(6.0),
-                child: PinTextField(
-                  fields: 6,
-                  showFieldAsBox: true,
-                  onSubmit: (pin) => showDialog(
-                    context: context,
-                    builder: (context) => AlertDialog(
-                      title: Text("Successful"),
-                      content: Text('Your attendance is taken'),
-                    ),
-                  ), //end showDialog()
-                  // end onSubmit
-                ), // end PinEntryTextField()
-              ),
-              Text(
-                "Having Problem? Report",
-                style: TextStyle(fontSize: 12.0),
-              ),
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(
+              "Enter Your Attendance Code",
+              style: TextStyle(fontSize: 18.0),
+            ),
+            Padding(
+              padding: EdgeInsets.all(6.0),
+              child: PinTextField(
+                fields: 5,
+                showFieldAsBox: true,
+                onSubmit: (pin) => showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    title: Text("Successful"),
+                    content: Text('Your attendance is taken'),
+                  ),
+                ), //end showDialog()
+                // end onSubmit
+              ), // end PinEntryTextField()
+            ),
+            Text(
+              "Having Problem? Report",
+              style: TextStyle(fontSize: 12.0),
+            ),
+          ],
         ),
       )),
     );

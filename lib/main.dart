@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:student_assistant/constants.dart';
+import 'package:student_assistant/pages/edit-profile-page.dart';
 import 'package:student_assistant/pages/login-page.dart';
 import 'package:student_assistant/pages/otp-page.dart';
 import 'package:student_assistant/pages/registration-page.dart';
-import 'package:student_assistant/pages/welcome-screen.dart';
+import 'package:student_assistant/pages/welcome-screen-page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         RegistrationPage.id: (context) => RegistrationPage(),
         LoginScreen.id: (context) => LoginScreen(),
         OTPScreen.id: (context) => OTPScreen(),
+        ProfileEditScreen.id: (context) => ProfileEditScreen(),
       },
     );
   }

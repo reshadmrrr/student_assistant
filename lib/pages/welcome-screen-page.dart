@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:student_assistant/constants.dart';
+import 'package:student_assistant/pages/edit-profile-page.dart';
 import 'package:student_assistant/pages/login-page.dart';
 import 'package:student_assistant/pages/otp-page.dart';
 import 'package:student_assistant/pages/registration-page.dart';
@@ -29,9 +30,12 @@ class WelcomeScreen extends StatelessWidget {
           ),
           SizedBox(height: height * 0.025),
           Flexible(
-            child: Hero(
-              tag: 'app-title',
-              child: Image.asset(kAppTitle),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Hero(
+                tag: 'app-title',
+                child: Image.asset(kAppTitle),
+              ),
             ),
           ),
           SizedBox(height: height * 0.1),
@@ -60,15 +64,20 @@ class WelcomeScreen extends StatelessWidget {
             ),
           ),
           SizedBox(height: height * 0.02),
-          Hero(
-            tag: 'yo',
-            child: RoundedRaisedButton(
-              width: width,
-              height: height,
-              title: "Temporary OTP",
-              color: Colors.deepPurple,
-              onPressed: () => Navigator.pushNamed(context, OTPScreen.id),
-            ),
+          RoundedRaisedButton(
+            width: width,
+            height: height,
+            title: "Temporary OTP",
+            color: Colors.deepPurple,
+            onPressed: () => Navigator.pushNamed(context, OTPScreen.id),
+          ),
+          SizedBox(height: height * 0.02),
+          RoundedRaisedButton(
+            width: width,
+            height: height,
+            title: "Edit Profile",
+            color: Colors.lightBlueAccent,
+            onPressed: () => Navigator.pushNamed(context, ProfileEditScreen.id),
           ),
         ],
       ),
